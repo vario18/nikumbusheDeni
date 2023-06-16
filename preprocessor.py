@@ -20,9 +20,10 @@ class PlateDetector:
 
     @classmethod
     def load_img(self, path):
-        # the_img = cv2.imread(path)
+        if isinstance(path, cv2.Mat):
+            return path
         # cv2.resize(the_img, (120, 120))
-        return cv2.imread(path)
+        return cv2.imread(str(path))
 
     def extract_text_from_image(self, image) -> list[str]:
         result = self.reader.readtext(image)
