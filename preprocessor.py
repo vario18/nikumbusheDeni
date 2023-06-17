@@ -20,10 +20,11 @@ class PlateDetector:
 
     @classmethod
     def load_img(self, path):
-        if isinstance(path, cv2.Mat):
-            return path
+        # if isinstance(path, cv2.Mat):
+        # return path
         # cv2.resize(the_img, (120, 120))
-        return cv2.imread(str(path))
+        # return cv2.imread(path)
+        return path
 
     def extract_text_from_image(self, image) -> list[str]:
         result = self.reader.readtext(image)
@@ -46,5 +47,4 @@ class PlateDetector:
             xmin, ymin, xmax, ymax = map(int, car_plate_results[i])
             cropped_image = cv2.cvtColor(
                 original_img[ymin:ymax, xmin:xmax], cv2.COLOR_BGR2RGB)
-            plate_text = self.extract_text_from_image(cropped_image)
-            print(plate_text)
+            return self.extract_text_from_image(cropped_image)
