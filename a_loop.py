@@ -1,5 +1,7 @@
 import cv2
 import time
+
+from sms import SendSMS
 from preprocessor import PlateDetector
 from src.utils import compare
 
@@ -24,8 +26,17 @@ while cap.isOpened():
             cv2.imshow('frame', frame)
             cv2.imwrite('captured_frame.jpg', frame)  # Save the captured frame
             last_capture_time = current_time
-            if plateDetect.process_image(frame) is not None:
-                print(compare(plateDetect.process_image(frame)))
+            thePlate = plateDetect.process_image(frame)
+            if thePlate is not None:
+                theCar = compare(thePlate)
+                if theCar is not None:
+                    if int(theCar.owed) > 5000:
+                        SendSMS().send(theCar.phoneNumber, theCar.owed)
+                    else:
+                        print(
+                            f"{theCar.carOwner}, owner of car ({theCar.plateNumber} {theCar.plateLetter}) is not owed.")
+                else:
+                    print(f"{thePlate} couldn't be found in the Database.")
 
         # Display the resulting frame
         # cv2.imshow('frame', frame)

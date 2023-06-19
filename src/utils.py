@@ -10,6 +10,7 @@ def compare(plate: list[str]):
                 print(
                     f"Found {item.plateLetter} {item.plateNumber} in {item.id}")
                 return Cars.get_by_id(item.id)
+    return None
 
 
 def present(item, thelst):
