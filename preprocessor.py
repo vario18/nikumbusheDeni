@@ -26,77 +26,9 @@ class PlateDetector:
         # return cv2.imread(path)
         return path
 
-    # def is_number_or_letters(self, string):
-    #     if string.isdigit():
-    #         return "Number"
-    #     elif string.isalpha():
-    #         return "Letters"
-    #     else:
-    #         return "Mixed"
-
-    # def good_plate_number(self, plate: list[str]):
-    #     number = 0
-    #     letters = ""
-    #     if len(plate) == 1:
-    #         newplate = plate[0].split(" ")
-    #         self.good_plate_number(newplate)
-    #     elif len(plate) == 2:
-    #         for i in plate:
-    #             print(i)
-    #             if self.is_number_or_letters(i) == "Number":
-    #                 number = i[-3:]
-    #             elif self.is_number_or_letters(i) == "Letters":
-    #                 letters = i[-3:]
-    #             elif self.is_number_or_letters(i) == "Mixed":
-    #                 number = i[-3:]
-    #     theplate = [str(number), str(letters)]
-    #     if len(theplate[0]) == 3 and len(theplate[1]) == 3:
-    #         return theplate
-    #     else:
-    #         return None, f"got: {theplate}"
-
-    def compare(self, plate):
-        fetched_all_plates = [
-            {"id": 1, "letters": "ABC", "numbers": "123"},
-            {"id": 2, "letters": "DTP", "numbers": "152"},
-            {"id": 3, "letters": "BDB", "numbers": "602"},
-            {"id": 4, "letters": "CUL", "numbers": "245"},
-            {"id": 5, "letters": "DTS", "numbers": "945"},
-            {"id": 6, "letters": "DFH", "numbers": "405"},
-            {"id": 7, "letters": "ALM", "numbers": "517"},
-            {"id": 8, "letters": "DRN", "numbers": "468"},
-            {"id": 9, "letters": "DBU", "numbers": "405"},
-            {"id": 10, "letters": "AKE", "numbers": "393"},
-            {"id": 11, "letters": "CBY", "numbers": "865"},
-            {"id": 12, "letters": "SU", "numbers": "41396"},
-            {"id": 13, "letters": "CYR", "numbers": "572"},
-            {"id": 14, "letters": "DWW", "numbers": "280"},
-            {"id": 15, "letters": "DUB", "numbers": "866"},
-            {"id": 16, "letters": "DSQ", "numbers": "311"},
-            {"id": 17, "letters": "DGC", "numbers": "785"},
-            {"id": 18, "letters": "DRM", "numbers": "373"},
-            {"id": 19, "letters": "CGE", "numbers": "374"},
-            {"id": 20, "letters": "DJM", "numbers": "713"}
-        ]
-        # test_plate = ["CUL", "21245"]
-        for item in fetched_all_plates:
-            if self.present(item['letters'], plate):
-                # print(f"{item['letters']} is present in {item['id']}")
-                if self.present(item['numbers'], plate):
-                    print(
-                        f"Found {item['letters']} {item['numbers']} in {item['id']}")
-
-    def present(self, item, thelst):
-        for i in thelst:
-            if item.lower() in i.lower():
-                return True
-        return False
-
     def extract_text_from_image(self, image) -> list[str]:
         result = self.reader.readtext(image)
-        texts = [entry[1] for entry in result]  # Extract text from result
-        self.compare(texts)
-        return texts
+        return [entry[1] for entry in result]  # Extract text from result
 
     def process_image(self, img_path: str):
         original_img = self.load_img(img_path)
