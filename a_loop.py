@@ -1,10 +1,11 @@
 import cv2
 import time
 from preprocessor import PlateDetector
+from src.utils import compare
 
 plateDetect = PlateDetector(0.25)
 
-cap = cv2.VideoCapture('./test_videos/vid1.mp4')
+cap = cv2.VideoCapture('./test_videos/vid3.mp4')
 
 # interval = 5 * 60  # Interval in seconds (5 minutes)
 interval = 5
@@ -24,7 +25,7 @@ while cap.isOpened():
             cv2.imwrite('captured_frame.jpg', frame)  # Save the captured frame
             last_capture_time = current_time
             if plateDetect.process_image(frame) is not None:
-                print(plateDetect.process_image(frame))
+                print(compare(plateDetect.process_image(frame)))
 
         # Display the resulting frame
         # cv2.imshow('frame', frame)
