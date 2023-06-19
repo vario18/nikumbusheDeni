@@ -1,5 +1,5 @@
 import json
-from .model import Cars, engine
+from model import Cars, engine
 
 from sqlmodel import Session
 
@@ -8,7 +8,7 @@ def save_questions_to_database(json_file_path: str):
     with open(json_file_path, "r") as f:
         cars = json.load(f)
 
-    print(cars[0])
+    # print(cars[0])
 
     with Session(engine) as session:
         i = 1

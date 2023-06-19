@@ -13,6 +13,7 @@ class Cars(SQLModel, table=True):
     phoneNumber: str
     plateLetter: str
     plateNumber: str
+    owed: int = Field(default=0)
 
     @classmethod
     def get_by_id(cls, id: int):

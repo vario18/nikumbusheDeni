@@ -4,133 +4,152 @@
     "plateLetter": "ABC",
     "plateNumber": "123",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 2,
     "plateLetter": "DTP",
     "plateNumber": "152",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 3,
     "plateLetter": "BDB",
     "plateNumber": "602",
     "carOwner": "James John",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 4,
     "plateLetter": "CUL",
     "plateNumber": "245",
     "carOwner": "James John",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 5,
     "plateLetter": "DTS",
     "plateNumber": "945",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 6,
     "plateLetter": "DFH",
     "plateNumber": "405",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 7,
     "plateLetter": "ALM",
     "plateNumber": "517",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 8,
     "plateLetter": "DRN",
     "plateNumber": "468",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 9,
     "plateLetter": "DBU",
     "plateNumber": "405",
     "carOwner": "Michael Joseph",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 10,
     "plateLetter": "AKE",
     "plateNumber": "393",
     "carOwner": "Michael Joseph",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 11,
     "plateLetter": "CBY",
     "plateNumber": "865",
     "carOwner": "Michael Joseph",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 12,
     "plateLetter": "SU",
     "plateNumber": "41396",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 13,
     "plateLetter": "CYR",
     "plateNumber": "572",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 14,
     "plateLetter": "DWW",
     "plateNumber": "280",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 15,
     "plateLetter": "DUB",
     "plateNumber": "866",
     "carOwner": "Salma Samwel",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 16,
     "plateLetter": "DSQ",
     "plateNumber": "311",
     "carOwner": "Salma Samwel",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 17,
     "plateLetter": "DGC",
     "plateNumber": "785",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 18,
     "plateLetter": "DRM",
     "plateNumber": "373",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 19,
     "plateLetter": "CGE",
     "plateNumber": "374",
     "carOwner": "Martha Jackson",
-    "phoneNumber": "+255624237298"
+    "phoneNumber": "+255624237298",
+    "owed": 0
   },
   {
     "id": 20,
