@@ -17,12 +17,12 @@ class SendSMS():
 
         self.sms = africastalking.SMS
 
-    def send(self, number: str, amount: int):
+    def send(self, number: str, owner: str, amount: int, plate: str):
         # Set the numbers in international format
         recipients = [number]
 
         # Set your message
-        message = f"Gari lako linadaiwa Tshs {amount}/= mzee \n #NikumbusheDeni"
+        message = f"Ndugu  {owner}, Gari lako namba: {plate}. Linadaiwa Tshs {amount}/=. Tafadhali lipia. \n #NikumbusheDeni"
 
         # Set your shortCode or senderId
         # sender = "AFRICASTKNG"

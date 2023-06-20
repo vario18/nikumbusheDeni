@@ -10,7 +10,7 @@ plateDetect = PlateDetector(0.25)
 cap = cv2.VideoCapture('./test_videos/vid3.mp4')
 
 # interval = 5 * 60  # Interval in seconds (5 minutes)
-interval = 5
+interval = 4
 last_capture_time = time.time()
 
 while cap.isOpened():
@@ -31,19 +31,14 @@ while cap.isOpened():
                 theCar = compare(thePlate)
                 if theCar is not None:
                     if int(theCar.owed) > 5000:
-                        SendSMS().send(theCar.phoneNumber, theCar.owed)
+                        SendSMS().send(theCar.phoneNumber, theCar.carOwner, theCar.owed,
+                                       f"T{theCar.plateNumber} {theCar.plateLetter}")
                     else:
                         print(
                             f"{theCar.carOwner}, owner of car ({theCar.plateNumber} {theCar.plateLetter}) is not owed.")
                 else:
                     print(f"{thePlate} couldn't be found in the Database.")
 
-        # Display the resulting frame
-        # cv2.imshow('frame', frame)
-
-        # the 'q' button is set as the
-        # quitting button you may use any
-        # desired button of your choice
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
     else:
