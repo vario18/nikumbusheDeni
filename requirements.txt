@@ -1,0 +1,8 @@
+easyocr
+opencv-python
+yolov5
+sqlmodel
+africastalking
+fastapi
+Flask
+APScheduler
