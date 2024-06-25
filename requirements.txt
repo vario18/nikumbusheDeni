@@ -6,3 +6,4 @@ africastalking
 fastapi
 Flask
 APScheduler
+mysql-connector-python

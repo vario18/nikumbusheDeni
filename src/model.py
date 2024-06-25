@@ -29,5 +29,5 @@ class Cars(SQLModel, table=True):
 
 
 def create_db_and_tables():
-    # SQLModel.metadata.create_all(engine)
-    pass
+    SQLModel.metadata.create_all(engine)
+    # pass

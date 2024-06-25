@@ -1,33 +1,53 @@
 import cv2
-
-from sms import SendSMS
-from src.utils import compare
+from sms import SMSNotifier
 from preprocessor import PlateDetector
+from src.utils import find_car_by_plate
 
-plateDetect = PlateDetector(0.25)
+# initialize constants
+dept = 0
 
-# cap = cv2.VideoCapture('./test_videos/vid3.mp4')
-cap = cv2.imread("./test_videos/test_pic1.jpg")
+# Initialize the plate detector
+plate_detector = PlateDetector(0.25)
 
-thePlate = plateDetect.process_image(cap)
-if thePlate is not None:
-    theCar = compare(thePlate)
-    if theCar is not None:
-        if int(theCar.owed) > 5000:
-            SendSMS().send(theCar.phoneNumber, theCar.carOwner, theCar.owed,
-                           f"T{theCar.plateNumber} {theCar.plateLetter}")
+# Load the image from file
+image = cv2.imread("./test_images/test-pic4.jpg")
+
+# Process the image to detect the license plate
+detected_plate = plate_detector.process_image(image)
+
+# Check if a plate is detected
+if detected_plate is not None:
+    print("Detected plate:", detected_plate)
+
+    # Find the car details based on the detected plate
+    car = find_car_by_plate(detected_plate)
+
+    # Check if the car is found in the database
+    if car is not None:
+        # Check if the car is owed more than 0
+        if int(car.owed) > dept:
+            # Send an SMS to the car owner
+            SMSNotifier().send_sms(
+                car.phoneNumber,
+                car.carOwner,
+                car.owed,
+                f"T{car.plateNumber} {car.plateLetter}",
+            )
         else:
             print(
-                f"{theCar.carOwner}, owner of car ({theCar.plateNumber} {theCar.plateLetter}) is not owed.")
+                f"{car.carOwner}, owner of car ({car.plateNumber} {car.plateLetter}) is not owed."
+            )
     else:
-        print(f"{thePlate} couldn't be found in the Database.")
+        print(f"{detected_plate} couldn't be found in the Database.")
 
-cap = cv2.resize(cap, (700, 700))
-cv2.imshow('frame', cap)
+# Resize the image for display
+resized_image = cv2.resize(image, (700, 700))
 
-# waits for user to press any key
-# (this is necessary to avoid Python kernel form crashing)
+# Show the image
+cv2.imshow("frame", resized_image)
+
+# Wait for user to press any key (to avoid Python kernel from crashing)
 cv2.waitKey(0)
 
-# closing all open windows
+# Close all open windows
 cv2.destroyAllWindows()

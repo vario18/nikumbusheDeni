@@ -1,18 +1,18 @@
 [
   {
     "id": 1,
-    "plateLetter": "ABC",
+    "plateLetter": "DTP",
     "plateNumber": "123",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298",
-    "owed": 0
+    "phoneNumber": "+255695545298",
+    "owed": 1000
   },
   {
     "id": 2,
     "plateLetter": "DTP",
     "plateNumber": "152",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298",
+    "phoneNumber": "+255695545298",
     "owed": 0
   },
   {
@@ -57,11 +57,11 @@
   },
   {
     "id": 8,
-    "plateLetter": "DRN",
-    "plateNumber": "468",
-    "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298",
-    "owed": 0
+    "plateLetter": "DEH",
+    "plateNumber": "519",
+    "carOwner": "Godfrey Nzogela",
+    "phoneNumber": "+255789318184",
+    "owed": 300000
   },
   {
     "id": 9,
@@ -81,19 +81,19 @@
   },
   {
     "id": 11,
-    "plateLetter": "CBY",
-    "plateNumber": "865",
+    "plateLetter": "ACY",
+    "plateNumber": "147",
     "carOwner": "Michael Joseph",
     "phoneNumber": "+255624237298",
     "owed": 0
   },
   {
     "id": 12,
-    "plateLetter": "SU",
-    "plateNumber": "41396",
+    "plateLetter": "DUF",
+    "plateNumber": "285",
     "carOwner": "Elia Mkumbo",
-    "phoneNumber": "+255624237298",
-    "owed": 0
+    "phoneNumber": "+255695545298",
+    "owed": 10000
   },
   {
     "id": 13,
